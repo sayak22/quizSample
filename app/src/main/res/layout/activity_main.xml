@@ -5,27 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/previous"
             android:text="PREVIOUS"
             android:textColor="@color/black"
             app:cornerRadius="15dp"
             android:layout_marginRight="20dp"
             android:layout_height="wrap_content"
             android:layout_width="120dp"
-            android:backgroundTint="#e4f2e7"/>
+            android:visibility="invisible"
+            android:backgroundTint="#93BFB7"/>
 
         <TextView
-            android:id="@+id/qno"
+            android:id="@+id/qnumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1 out of 2"
@@ -33,13 +35,14 @@
             android:textStyle="bold"
             android:layout_marginBottom="20dp"/>
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/next"
             android:text="NEXT"
             app:cornerRadius="15dp"
             android:textColor="@color/black"
             android:layout_marginLeft="20dp"
             android:layout_height="wrap_content"
             android:layout_width="120dp"
-            android:backgroundTint="#e4f2e7"/>
+            android:backgroundTint="#93BFB7"/>
 
     </LinearLayout>
 
@@ -52,57 +55,79 @@
         android:text="Q. What is the name of this fruit?"
         android:textStyle="bold"/>
     <ImageView
-        android:id="@+id/banana"
+        android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:src="@drawable/banana"
-        android:layout_marginBottom="20dp"/>
+        android:layout_marginBottom="25dp"/>
     <GridLayout
         android:layout_width="400dp"
         android:layout_height="200dp"
         android:columnCount="2"
-        android:rowCount="2"
-        >
-        <TextView
+        android:rowCount="2">
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/opt1"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_margin="25dp"
             android:text="MANGO"
             android:gravity="center"
-            android:textStyle="bold"
-            android:background="#93BFB7"
+            android:textSize="15sp"
+            android:backgroundTint="#e4f2e7"
+            android:textColor="@color/black"
+            android:onClick="lock"
             />
-        <TextView
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/opt2"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_margin="25dp"
             android:text="APPLE"
-            android:textStyle="bold"
+            android:textSize="15sp"
             android:gravity="center"
-            android:background="#93BFB7"
+            android:backgroundTint="#e4f2e7"
+            android:textColor="@color/black"
+            android:onClick="lock"
             />
-        <TextView
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/opt3"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:textStyle="bold"
+            android:textSize="15sp"
             android:layout_margin="25dp"
             android:text="BANANA"
             android:gravity="center"
-            android:background="#93BFB7"
+            android:backgroundTint="#e4f2e7"
+            android:textColor="@color/black"
+            android:onClick="lock"
             />
-        <TextView
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/opt4"
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_margin="25dp"
-            android:textStyle="bold"
+            android:textSize="15sp"
             android:text="GUAVA"
             android:gravity="center"
-            android:background="#93BFB7"
+            android:backgroundTint="#e4f2e7"
+            android:textColor="@color/black"
+            android:onClick="lock"
             />
     </GridLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/resetbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            app:cornerRadius="15dp"
+            android:layout_marginTop="25dp"
+            android:text="RESET"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:backgroundTint="#93BFB7"
+            android:layout_alignParentBottom="true"
+            android:drawableLeft="@drawable/reset"
+            android:onClick="resetClick"/>
 </LinearLayout>
 </RelativeLayout>
